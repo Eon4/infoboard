@@ -7,21 +7,21 @@ function currentTime() {
     let hh = date.getHours();
     let mm = date.getMinutes();
     let ss = date.getSeconds();
-    let session = ""; //HERE WE CAN ADD "AM" IF WISHED
+    let session = "AM"; //HERE WE CAN ADD "AM" IF WISHED
   
     if(hh === 0){
         hh = 12;
     }
     if(hh > 12){
         hh = hh - 12;
-        session = "";// AND "PM" IF WISHED
+        session = "PM";// AND "PM" IF WISHED
      }
   
      hh = (hh < 10) ? "0" + hh : hh;
      mm = (mm < 10) ? "0" + mm : mm;
      ss = (ss < 10) ? "0" + ss : ss;
       
-     let time = hh + ":" + mm + ":" + ss; //IF AM AND PM IS WISHED, ADD THIS: + " " + session
+     let time = hh + ":" + mm + ":" + ss + " " + session; //IF AM AND PM IS WISHED, ADD THIS: + " " + session
   
     document.getElementById("clock").innerText = time; 
     let t = setTimeout(function(){ currentTime() }, 1000);
